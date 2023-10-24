@@ -14,29 +14,27 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nome :</label>
-                                <input type="text" name="name" id="name" required/>
+                                <input v-model="name" type="text" name="name" id="name" required/>
                             </div>
                             <div class="form-group">
                                 <label for="father_name">Apelido :</label>
-                                <input type="text" name="father_name" id="father_name" required/>
+                                <input v-model="father_name" type="text" name="father_name" id="father_name" required/>
+                            </div><!---->
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group">
+                                <label for="email">e-mail :</label>
+                                <input v-model="email" type="text" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">senha:</label>
+                                <input v-model="senha" type="password" placeholder="Senha">
                             </div>
                         </div>
-                        <div class="form-group">
+                        
+                        <!--<div class="form-group">
                             <label for="number">Celular :</label>
-                            <input type="number" name="number" id="number" required/>
-                        </div>
-                        <div class="form-radio">
-                            <label for="gender" class="radio-label">Genero :</label>
-                            <div class="form-radio-item">
-                                <input type="radio" name="gender" id="male" checked>
-                                <label for="male">Masculino</label>
-                                <span class="check"></span>
-                            </div>
-                            <div class="form-radio-item">
-                                <input type="radio" name="gender" id="female">
-                                <label for="female">Feminino</label>
-                                <span class="check"></span>
-                            </div>
+                            <input v-model="number" type="number" name="number" id="number" required/>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -79,25 +77,10 @@
                         <div class="form-group">
                             <label for="date">Data de Nascimento :</label>
                             <input type="date" name="date" id="birth_date">
-                        </div>
-                       
-                        <div class="form-group">
-                            <label for="course">Método:</label>
-                            <div class="form-select">
-                                <select name="course" id="course">
-                                    <option value="">Pilulas</option>
-                                    <option value="">Designer</option>
-                                    <option value="">Marketing</option>
-                                    <option value="">Injeção</option>
-                                    <option value="">Dio</option>
-                                    <option value="">Implante</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
+                        </div>-->
                       
                         <div class="form-submit">
-                            <button type="button" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-success" @click="submit">Submit</button>
                             <button type="button" class="btn btn-danger">Cancelar</button>
                         </div>
                     </form>
