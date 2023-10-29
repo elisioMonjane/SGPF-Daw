@@ -7,14 +7,14 @@ export default{
 			descricao:"user",
 			
 		}
-	},
+	}
 }
 </script>
 <template>
 	<div class="wrapper">
 		<div class="main-header">
 			<div class="logo-header">
-				<a href="/" class="logo" >
+				<a href="/Dashboard" class="logo" >
 					Ready Dashboard
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +78,7 @@ export default{
 										</a>
 										<a href="#">
 											<div class="notif-img"> 
-												<img src="assets/img/profile2.jpg" alt="Img Profile">
+												<img :src="user" :alt="descricao">
 											</div>
 											<div class="notif-content">
 												<span class="block">
@@ -104,14 +104,14 @@ export default{
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img :src="user" :alt="descricao" width="36" class="img-circle"><span >Hizrian</span></a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img :src="user" :alt="descricao" width="36" class="img-circle"><span >Hizrian</span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img :src="user" :alt="descricao" width="36" class="img-circle"></div>
+										<div class="u-img">	<img :src="user" :alt="descricao"></div>
 										<div class="u-text">
-											<h4 >Hizrian</h4>
-											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+											<h4>Hizrian</h4>
+											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Ver o perfil</a></div>
 										</div>
 									</li>
 									<div class="dropdown-divider"></div>
@@ -192,24 +192,23 @@ export default{
 							<span class="badge badge-count">80</span>
 							</a>
 							</li>
-						</ul>	
-				</div>	
+						</ul>
+				</div>
 			</div>
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
-						<h4 class="page-title">Agendas</h4>
+						<h4 class="page-title">Historicos</h4>
 						<div class="row">
-
+							
 								<div class="card" style="background-color:rgb(242, 243, 248)" >
 									<div class="card-header">
-										<div class="card-title" style="background: rgb(77, 124, 254)">Agendas do Utente</div>
+										<div class="card-title" style="background: rgb(77, 124, 254)">Historico do Utente</div>
 									</div>
 									<div class="card-body">
 										<div class="card-sub">									
 											
 										</div>
-
 										<table class="table table-borderless" style="background-color:" >
 											<thead>
 												<tr style="background: rgb(77, 124, 254)">
@@ -258,55 +257,45 @@ export default{
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-outline-primary la la-calendar-check-o" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" style="border-radius: 1% 20% 1% 20%;">Agendar uma consulta</button>
-							<button type="button" class="btn btn-outline-danger" style="border-radius: 1% 20% 1% 20%;"><a href="/Dashboard" class="la la-undo" >Voltar</a></button>
-						</div>
+						</div><button type="button" class="btn btn-danger"><a href="/Dashboard" class="la la-undo" style="color: white;">Voltar</a></button>
 					</div>
 				</div>
-				
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title fs-5" id="exampleModalLabel">Registe-se aqui!</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<form @submit.prevent="handleSubmit">
-							<div class="mb-3">
-								<label for="name" class="col-form-label">Primeiro nome</label>
-								<input v-model="name" type="text" class="form-control" id="recipient-name">
-							</div>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Apelido</label>
-								<input v-model="apelido" type="text" class="form-control" id="recipient-name">
-							</div>
-							<div class="mb-3">
-								<label for="email" class="col-form-label">Email</label>
-								<input v-model="email" type="text" class="form-control" id="email">
-							</div>
-							<div class="mb-3">
-								<label for="password" class="col-form-label">Senha</label>
-								<input v-model="password" type="password" class="form-control" id="password">
-							</div>
-							
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary" @click="handleSubmit" value="submit">enviar</button>
-					</div>
-				</div>
-				
-			</div>
-</div>
-
 		</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="/">
+										SGPF
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/">
+										Ajuda
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/">
+										Licenciado
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							2020, Desenvolvido <i class="la la-heart heart text-danger"></i> por <a href="/">SGPF</a>
+						</div>				
+					</div>
+				</footer>
+			
+
 </template>
-<style scoped>
+<style>
+
 .main-header{
-	background: rgb(77, 124, 254)
+	background:rgb(77, 124, 254)
 }
+
+
+
 </style>

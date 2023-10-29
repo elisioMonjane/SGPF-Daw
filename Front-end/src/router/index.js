@@ -69,7 +69,14 @@ component:()=>import('../views/Register.vue')
       path:'/Icons',
       name:'Icons',
       component: ()=>import('../views/Icons.vue')
-    },{
+    },
+    
+    {
+      path:'/Relatorio',
+      name:'Relatorio',
+      component: ()=>import('../views/Relatorio.vue')
+    },
+    {
       path:'/Historico',
       name:'Historico',
       component:()=>import('../views/Historico.vue')

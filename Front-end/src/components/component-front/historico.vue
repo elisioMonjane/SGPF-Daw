@@ -5,6 +5,7 @@ export default{
 		return{
 			user:"/img/profile.jpg",
 			descricao:"user",
+			style:"rounded-circle",
 			
 		}
 	}
@@ -14,7 +15,7 @@ export default{
 	<div class="wrapper">
 		<div class="main-header">
 			<div class="logo-header">
-				<a href="/Dashboard" class="logo" style="color:white">
+				<a href="/Dashboard" class="logo" >
 					Ready Dashboard
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,7 +105,7 @@ export default{
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img :src="user" :alt="descricao" width="36" class="img-circle"><span style="color:white">Hizrian</span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img :src="user" :alt="descricao" width="36" class="img-circle"><span >Hizrian</span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
@@ -133,9 +134,9 @@ export default{
 						</div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span style="color:white">
+								<span >
 									Hizrian
-									<span class="user-level" style="color:white">Administrator</span>
+									<span class="user-level" >Administrator</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -145,17 +146,17 @@ export default{
 								<ul class="nav">
 									<li>
 										<a href="#profile">
-											<span class="link-collapse" style="color:white">My Profile</span>
+											<span class="link-collapse" >My Profile</span>
 										</a>
 									</li>
 									<li>
 										<a href="#edit">
-											<span class="link-collapse" style="color:white">Edit Profile</span>
+											<span class="link-collapse" >Edit Profile</span>
 										</a>
 									</li>
 									<li>
 										<a href="#settings">
-											<span class="link-collapse" style="color:white">Settings</span>
+											<span class="link-collapse" >Settings</span>
 										</a>
 									</li>
 								</ul>
@@ -163,51 +164,68 @@ export default{
 						</div>
 					</div>
 					<ul class="nav">
-						<li class="nav-item">
+						<li class="nav-item active">
 							<a href="/Dashboard">
-								<i class="la la-dashboard"></i>
-								<p>Inicio</p>
-								<span class="badge badge-count">5</span>
+							<i class="la la-tachometer"></i>
+							<p>Inicio</p>
+							<span class="badge badge-count">5</span>
+							</a>
+						</li>
+
+						<li class="nav-item active">
+							<a href="/Agendamento">
+							<i class="la la-calendar-check-o"></i>
+							<p>Agendamento</p>
+							<span class="badge badge-count">10</span>
 							</a>
 						</li>
 						<li class="nav-item active">
-							<a href="/Agendamento">
-								<i class="la la-keyboard-o"></i>
-								<p>Agendamento</p>
-								<span class="badge badge-count">50</span>
+							<a href="/Relatorio">
+							<i class="la la-check-square"></i>
+							<p>Relatorios</p>
+							<span class="badge badge-count">50</span>
 							</a>
 						</li>
-						<li class="nav-item">
-							<a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown('historicoDropdown')">
-							<i class="la la-table"></i>
+						<li class="nav-item active">
+							<a href="/Historico">
+							<i class="la la-history"></i>
 							<p>Historico </p>
+							<span class="badge badge-count">80</span>
 							</a>
-							<div id="historicoDropdown" class="dropdown-content">
-							<a href="/Historico">Agendamentos</a>
-							<a href="/Historico">Documentos</a>
-							</div>
-						</li>
-					</ul>
+							</li>
+						</ul>
 				</div>
 			</div>
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
 						<h4 class="page-title">Historicos</h4>
+						<div class="photo" >
+							<img :src="user" :alt="descricao" style="border-radius: 50%; width: 40px; height: 40px;">
+							
+								<span >
+									Hizrian
+									<h5 class="" >Administrator</h5>
+									<span class="caret"></span>
+								</span>
+							
+						</div>
+						
 						<div class="row">
-							<div class="col-md-6">
+							
 								<div class="card" style="background-color:rgb(242, 243, 248)" >
 									<div class="card-header">
-										<div class="card-title">Historico do Utente</div>
+										<div class="card-title" style="background: rgb(77, 124, 254)">Historico do Utente</div>
 									</div>
 									<div class="card-body">
 										<div class="card-sub">									
 											
 										</div>
-										<table class="table mt-3" style="background-color:" >
+										<table class="table table-borderless" style="background-color:" >
 											<thead>
-												<tr>
+												<tr style="background: rgb(77, 124, 254)">
 													<th scope="col">id</th>
+													<th scoped="col">Data</th>
 													<th scope="col">nome</th>
 													<th scope="col">Hospital</th>
                                                     <th scope="col">Método </th>
@@ -215,13 +233,14 @@ export default{
 													<th scope="col">periodo</th>
 													<th scope="col">Interrupção</th>
 													<th scope="col">Status</th>
-
+													<th scope="col">Acçoes</th>
 
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
 													<td>1</td>
+													<td>20/10/24</td>
 													<td>Mark</td>
 													<td>Otto</td>
 													<td>@mdo</td>
@@ -229,10 +248,13 @@ export default{
 													<td>Otto</td>
 													<td>12/10/23</td>
 													<td>Activo</td>
+													<td class="la la-remove" style="color:red;">Limpar historicos</td>
+													
 													
 												</tr>
 												<tr>
 													<td>2</td>
+													<td>16/10/24</td>
 													<td>Mark</td>
 													<td>Otto</td>
 													<td>@mdo</td>
@@ -240,20 +262,19 @@ export default{
 													<td>Otto</td>
 													<td>12/10/23</td>
 													<td>Activo</td>
+													<td class="la la-remove" style="color:red;">Limpar historicos</td>
+													
 												</tr>
 												
 											</tbody>
 										</table>
 									</div>
 								</div>
-								
 							</div>
-							
-						</div>
+						</div><button type="button" class="btn btn-danger"><a href="/Dashboard" class="la la-undo" style="color: white;">Voltar</a></button>
 					</div>
 				</div>
 			</div>
-		</div>
 				<footer class="footer">
 					<div class="container-fluid">
 						<nav class="pull-left">
@@ -285,15 +306,13 @@ export default{
 </template>
 <style>
 .sidebar{
-	background: rgb(3, 83, 70);
+
 }
 
 .main-header{
-	background: linear-gradient(rgb(14, 196, 174), rgb(8, 186, 156));
+	background: rgb(77, 124, 254)
 }
-.nav-item p{
-	color: white;
-}
+
 
 /* Estilos do menu suspenso */
 .dropdown {

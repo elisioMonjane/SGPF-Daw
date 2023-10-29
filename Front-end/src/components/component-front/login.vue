@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios'
 export default {
     data() {
       return {
@@ -25,8 +26,41 @@ export default {
           this.perfil = '';
         }
       }
+    },
+  
+
+    name: 'register',
+    data() {
+    return {
+        apelido: '',
+        name: '',
+        email: '',
+        password: '',
+    } 
+      },
+        methods:  {
+            handleSubmit() {
+            const data = {
+                    apelido: this.apelido,
+                    name: this.name,
+                    email: this.email,
+                    password: this.password,
+            };
+            axios.post('http://127.0.0.1:8000/api/register',data)
+            .then(
+                res =>{
+                    console.log(res)
+                }
+                    
+            ).catch(
+                err =>{
+                    console.log(err)
+                }
+            )   
+        }
     }
-  };
+}
+
 </script>
 <template>
   <section class="boxLogin container">
@@ -53,7 +87,8 @@ export default {
         <div class="linksForm">
 
           <a href="#" class="fade_4S" title="Resgatar Senha"><i class="fa-sharp fa-solid fa-share"></i> Resgatar Senha</a> 
-          <a href="/Register" class="fade_4S" title="Cadastrar-se"><i class="fa-solid fa-user-plus"></i> Cadastro</a>
+          <!--<a href="/Register" class="fade_4S" title="Cadastrar-se"><i class="fa-solid fa-user-plus"></i> Cadastro</a>-->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Registe-se</button>
 
         </div>
 
@@ -62,7 +97,41 @@ export default {
  </div>
  </section><!--Login-->
     
-  
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="exampleModalLabel">Registe-se aqui!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form @submit.prevent="handleSubmit">
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Primeiro nome</label>
+                        <input v-model="name" type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Apelido</label>
+                        <input v-model="apelido" type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input v-model="email" type="text" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="col-form-label">Senha</label>
+                        <input v-model="password" type="password" class="form-control" id="password">
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" @click="handleSubmit" value="submit">enviar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </template>
 <style>

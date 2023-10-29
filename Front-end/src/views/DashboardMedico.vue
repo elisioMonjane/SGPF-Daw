@@ -1,5 +1,5 @@
 <script setup>
-import PainelMedico from '../components/component-front/PainelMedico.vue'
+import PainelMedico from '../components/MedicoComponents/PainelMedico.vue'
 </script>
 <template>
 <PainelMedico/>
