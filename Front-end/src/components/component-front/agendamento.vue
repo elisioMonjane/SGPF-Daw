@@ -1,4 +1,5 @@
 <script>
+import sidebar from '../component-front/sidebar.vue'
 export default{
 	name:'picture',
 	data(){
@@ -117,7 +118,7 @@ export default{
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#"><i class="ti-user"></i> Meu Perfil</a>
 									
-									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Sair</a>
+									<a class="dropdown-item" href="/"><i class="fa fa-power-off"></i> Sair</a>
 								</ul>
 								<!-- /.dropdown-user -->
 							</li>
@@ -145,17 +146,12 @@ export default{
 								<ul class="nav">
 									<li>
 										<a href="#profile">
-											<span class="link-collapse" >My Profile</span>
+											<span class="link-collapse" >Meu Perfil</span>
 										</a>
 									</li>
 									<li>
 										<a href="#edit">
-											<span class="link-collapse" >Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse" >Settings</span>
+											<span class="link-collapse" >Editar Perfil</span>
 										</a>
 									</li>
 								</ul>
@@ -203,7 +199,7 @@ export default{
 
 								<div class="card" style="background-color:rgb(242, 243, 248)" >
 									<div class="card-header">
-										<div class="card-title" style="background: rgb(77, 124, 254)">Agendas do Utente</div>
+										<div class="card-title" style="background: rgb(77, 124, 254)">Minhas agendas</div>
 									</div>
 									<div class="card-body">
 										<div class="card-sub">									
@@ -261,7 +257,7 @@ export default{
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-outline-primary la la-calendar-check-o" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" style="border-radius: 1% 20% 1% 20%;">Agendar uma consulta</button>
-							<button type="button" class="btn btn-outline-danger" style="border-radius: 1% 20% 1% 20%;"><a href="/Dashboard" class="la la-undo" >Voltar</a></button>
+							<button type="button" class="btn btn-outline-danger" style="border-radius: 1% 20% 1% 20%;"><a href="/Dashboard" class="la la-undo" >acesso rápido</a></button>
 						</div>
 					</div>
 				</div>
@@ -301,9 +297,34 @@ export default{
 				</div>
 				
 			</div>
-</div>
-
 		</div>
+	</div>
+	<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="/">
+										SGPF
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/">
+										Ajuda
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/">
+										Licenciado
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							2020, Desenvolvido <i class="la la-heart heart text-danger"></i> por <a href="/">SGPF</a>
+						</div>				
+					</div>
+				</footer>
 </template>
 <style scoped>
 .main-header{

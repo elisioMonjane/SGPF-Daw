@@ -50,6 +50,7 @@ class AuthController extends Controller
                 'password' => 'required|string|min:6',
             ]);*/
     
+            /** @var App\Models\User $user */
             $user = User::create([
                 'name' => $request->name,
                 'apelido'=>$request->apelido,
@@ -59,8 +60,10 @@ class AuthController extends Controller
     
             return response()->json([
                 'message' => 'User created successfully',
-                'user' => $user
+                'user' => $user,
+                'token' => $user->createToken('token')
             ]);
+
         }
     
         public function logout()

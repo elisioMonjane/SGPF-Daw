@@ -145,19 +145,15 @@ export default{
 								<ul class="nav">
 									<li>
 										<a href="#profile">
-											<span class="link-collapse" >My Profile</span>
+											<span class="link-collapse" >Meu Perfil</span>
 										</a>
 									</li>
 									<li>
 										<a href="#edit">
-											<span class="link-collapse" >Edit Profile</span>
+											<span class="link-collapse" >Editar Perfil</span>
 										</a>
 									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse" >Settings</span>
-										</a>
-									</li>
+									
 								</ul>
 							</div>
 						</div>
@@ -257,7 +253,7 @@ export default{
 									</div>
 								</div>
 							</div>
-						</div><button type="button" class="btn btn-danger"><a href="/Dashboard" class="la la-undo" style="color: white;">Voltar</a></button>
+						</div><button type="button" class="btn btn-danger"><a href="/Dashboard" class="la la-undo" style="color: white;">acesso rápido</a></button>
 					</div>
 				</div>
 		</div>
